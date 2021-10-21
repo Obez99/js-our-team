@@ -3,36 +3,59 @@ const members =
     {
       name: "Wayne Barnett",
       role: "Founder & CEO",
-      image: "wayne-barnett-founder-ceo.jpg"
+      image: "img/wayne-barnett-founder-ceo.jpg"
     },
 
     {
       name: "Angela Caroll",
       role: "Chief Editor",
-      image: "angela-caroll-chief-editor.jpg"
+      image: "img/angela-caroll-chief-editor.jpg"
     },
 
     {
       name: "Walter Gordon",
       role: "Office Manager",
-      image: "walter-gordon-office-manager.jpg"
+      image: "img/walter-gordon-office-manager.jpg"
     },
 
     {
       name: "Angela Lopez",
       role: "Social Media Manager",
-      image: "angela-lopez-social-media-manager.jpg"
+      image: "img/angela-lopez-social-media-manager.jpg"
     },
 
     {
       name: "Scott Estrada",
       role: "Developer",
-      image: "scott-estrada-developer.jpg"
+      image: "img/scott-estrada-developer.jpg"
     },
 
     {
       name: "Barbara Ramos",
       role: "Graphic Designer",
-      image: "barbara-ramos-graphic-designer.jpg"
-    },
+      image: "img/barbara-ramos-graphic-designer.jpg"
+    }
   ]
+
+const teamContainer = document.querySelector(".team-container");
+const cardImage = document.querySelector(".card-image")
+const cardText = document.querySelector(".card-text")
+
+for (let key in members) {
+  const card = document.createElement("div")
+  card.classList.add("team-card")
+  teamContainer.append(card)
+
+  const cardImageElement = document.createElement("div")
+  cardImageElement.classList.add("card-image")
+  card.append(cardImageElement)
+
+  const cardTextElement = document.createElement("div")
+  cardTextElement.classList.add("card-text")
+  card.append(cardTextElement)
+
+  const cardImageTag = document.createElement("img")
+  cardImageTag.src = members[key]["image"]
+  cardImageElement.append(cardImageTag)
+
+}
