@@ -38,25 +38,31 @@ const members =
   ]
 
 const teamContainer = document.querySelector(".team-container");
-const cardImage = document.querySelector(".card-image")
-const cardText = document.querySelector(".card-text")
 
 for (let key in members) {
   const card = document.createElement("div")
   card.classList.add("team-card")
   teamContainer.append(card)
 
-  const cardImageElement = document.createElement("div")
-  cardImageElement.classList.add("card-image")
-  card.append(cardImageElement)
+  const cardImage = document.createElement("div")
+  cardImage.classList.add("card-image")
+  card.append(cardImage)
 
-  const cardTextElement = document.createElement("div")
-  cardTextElement.classList.add("card-text")
-  card.append(cardTextElement)
+  const cardText = document.createElement("div")
+  cardText.classList.add("card-text")
+  card.append(cardText)
 
   const cardImageTag = document.createElement("img")
   cardImageTag.src = members[key]["image"]
   cardImageTag.alt = members[key]["name"]
-  cardImageElement.append(cardImageTag)
+  cardImage.append(cardImageTag)
+
+  const cardTitle = document.createElement("h3")
+  cardTitle.innerHTML += members[key]["name"]
+  cardText.append(cardTitle)
+
+  const cardRole = document.createElement("p")
+  cardRole.innerHTML += members[key]["role"]
+  cardText.append(cardRole)
 
 }
