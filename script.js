@@ -48,7 +48,7 @@ addCard();
 
 function addCards() {
 
-  for (let key in members) {
+  for (let i = 0; i < members.length; i++) {
     const card = document.createElement("div")
     card.classList.add("team-card")
     teamContainer.append(card)
@@ -62,16 +62,16 @@ function addCards() {
     card.append(cardText)
 
     const cardImageTag = document.createElement("img")
-    cardImageTag.src = members[key]["image"]
-    cardImageTag.alt = members[key]["name"]
+    cardImageTag.src = members[i]["image"]
+    cardImageTag.alt = members[i]["name"]
     cardImage.append(cardImageTag)
 
     const cardTitle = document.createElement("h3")
-    cardTitle.innerHTML += members[key]["name"]
+    cardTitle.innerHTML += members[i]["name"]
     cardText.append(cardTitle)
 
     const cardRole = document.createElement("p")
-    cardRole.innerHTML += members[key]["role"]
+    cardRole.innerHTML += members[i]["role"]
     cardText.append(cardRole)
 
   }
@@ -85,9 +85,6 @@ function addCard() {
 
 
   addButton.addEventListener("click", function () {
-    console.log(formName.value);
-    console.log(formRole.value);
-    console.log(formImage.value);
 
     const newCard = {
       name: formName.value,
