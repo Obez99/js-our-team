@@ -56,6 +56,7 @@ for (let key in members) {
 
   const cardImageTag = document.createElement("img")
   cardImageTag.src = members[key]["image"]
+  cardImageTag.alt = members[key]["name"]
   cardImageElement.append(cardImageTag)
 
 }
